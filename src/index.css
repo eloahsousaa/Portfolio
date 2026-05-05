@@ -1,0 +1,68 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark: #02060E;
+  --purple-deep: #0d0520;
+  --purple-mid: #1a0840;
+  --violet: #9303C5;
+  --violet-light: #b94de0;
+  --violet-glow: #c060f0;
+  --violet-faint: rgba(147, 3, 197, 0.12);
+  --violet-faint2: rgba(147, 3, 197, 0.06);
+  --white: #f0e8ff;
+  --muted: rgba(240, 232, 255, 0.55);
+  --border: rgba(147, 3, 197, 0.25);
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-display: 'Syne', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+}
+
+/* ── FADE-IN ON SCROLL ── */
+.fade-in,
+[class*="fadeIn"] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible,
+[class*="fadeIn"].visible {
+  opacity: 1;
+  transform: translateY(0);
+}

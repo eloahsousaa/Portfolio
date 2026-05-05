@@ -1,0 +1,16 @@
+.root {
+  position: relative;
+  min-height: 100vh;
+}
+
+.bgRadial {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(147, 3, 197, 0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 50%, rgba(147, 3, 197, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 10% 80%, rgba(147, 3, 197, 0.1) 0%, transparent 60%),
+    linear-gradient(180deg, #02060E 0%, #08021a 50%, #02060E 100%);
+  pointer-events: none;
+  z-index: 0;
+}

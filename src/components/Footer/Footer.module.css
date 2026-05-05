@@ -1,0 +1,13 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 8%;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.footer strong {
+  color: var(--violet-light);
+}

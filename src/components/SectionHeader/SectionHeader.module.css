@@ -1,0 +1,27 @@
+.wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--violet-light);
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.line {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--violet), transparent);
+  border-radius: 999px;
+}

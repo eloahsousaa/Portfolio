@@ -1,0 +1,7 @@
+.cat {
+  position: fixed;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  z-index: 50;
+}

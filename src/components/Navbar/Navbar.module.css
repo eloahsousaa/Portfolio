@@ -1,0 +1,38 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.25rem 6%;
+  background: rgba(2, 6, 14, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--violet-glow);
+}
+
+@media (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+}
