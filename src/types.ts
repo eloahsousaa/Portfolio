@@ -6,6 +6,9 @@ export interface Project {
   roles: string[]
   githubUrl: string
   liveUrl?: string
+  // modal
+  videoUrl?: string       // caminho do vídeo em /public (ex: /videos/agrirslab.mp4)
+  fullDescription?: string  // texto longo para o modal
 }
 
 export interface Skill {
@@ -18,4 +21,14 @@ export interface ContactItem {
   value: string
   href: string
   icon: 'email' | 'linkedin' | 'github'
+}
+
+export interface Education {
+  id: string
+  type: 'Graduação' | 'Curso' | 'Certificado' | 'Bootcamp' | 'Técnico'
+  title: string
+  institution: string
+  period: string
+  description?: string
+  certificateImage?: string
 }

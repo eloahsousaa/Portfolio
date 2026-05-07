@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useScrollFadeIn } from '../../hooks/useScrollFadeIn'
 import SectionHeader from '../SectionHeader/SectionHeader'
 import { projects } from '../../data'
@@ -12,9 +14,64 @@ function GitHubIcon() {
   )
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
+  return createPortal(
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        <button className={styles.closeBtn} onClick={onClose}>✕</button>
+
+        <h2 className={styles.modalTitle}>{project.title}</h2>
+        <p className={styles.modalSubtitle}>{project.label}</p>
+
+        <div className={styles.mediaWrapper}>
+          {project.videoUrl ? (
+            <video
+              src={project.videoUrl}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={styles.video}
+            />
+          ) : (
+            <div className={styles.noVideo}>
+              <span>Sem vídeo disponível</span>
+            </div>
+          )}
+        </div>
+
+        <div className={styles.modalBody}>
+          <h4 className={styles.modalSection}>Sobre o projeto</h4>
+          <p className={styles.modalText}>
+            {project.fullDescription || project.description}
+          </p>
+
+          <div className={styles.modalRoles}>
+            {project.roles.map((r) => (
+              <span key={r} className={styles.role}>{r}</span>
+            ))}
+          </div>
+
+          <div className={styles.modalLinks}>
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
+              <GitHubIcon /> GitHub
+            </a>
+            {project.liveUrl && (
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                ↗ Ver projeto
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>,
+    document.body
+  )
+}
+
+function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${styles.clickable}`} onClick={onClick}>
       <p className={styles.label}>{project.label}</p>
       <h3 className={styles.title}>{project.title}</h3>
       <p className={styles.desc}>{project.description}</p>
@@ -29,6 +86,7 @@ function ProjectCard({ project }: { project: Project }) {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.link}
+          onClick={(e) => e.stopPropagation()}
         >
           <GitHubIcon />
           GitHub
@@ -39,6 +97,7 @@ function ProjectCard({ project }: { project: Project }) {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
+            onClick={(e) => e.stopPropagation()}
           >
             ↗ Ver projeto
           </a>
@@ -50,6 +109,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function Projects() {
   const ref = useScrollFadeIn()
+  const [selected, setSelected] = useState<Project | null>(null)
 
   return (
     <section id="projects" className={styles.section}>
@@ -58,10 +118,9 @@ export default function Projects() {
 
         <div className={styles.grid}>
           {projects.map((p) => (
-            <ProjectCard key={p.id} project={p} />
+            <ProjectCard key={p.id} project={p} onClick={() => setSelected(p)} />
           ))}
 
-          {/* Placeholder */}
           <div className={`${styles.card} ${styles.placeholder}`}>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
               <rect x="0.5" y="0.5" width="39" height="39" rx="11.5"
@@ -75,6 +134,10 @@ export default function Projects() {
           </div>
         </div>
       </div>
+
+      {selected && (
+        <ProjectModal project={selected} onClose={() => setSelected(null)} />
+      )}
     </section>
   )
 }
