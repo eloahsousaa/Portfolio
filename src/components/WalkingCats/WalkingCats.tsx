@@ -28,7 +28,7 @@ export default function WalkingCat() {
     ctx.imageSmoothingEnabled = false
 
     const img = new Image()
-    img.src = '/cat-sprite.png'
+    img.src = `${import.meta.env.BASE_URL}cat-sprite.png`
 
     let anim: AnimKey = 'idle'
     let frame = 0

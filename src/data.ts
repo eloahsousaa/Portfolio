@@ -21,7 +21,7 @@ export const projects: Project[] = [
       'Portal desenvolvido para o Laboratório de Sensoriamento Remoto Agrícola do INPE, com o objetivo de centralizar informações essenciais, ampliar a visibilidade do laboratório e facilitar o acesso público a pesquisas, projetos e iniciativas. Reúne perfis da equipe, publicações científicas, oportunidades e canais de contato. Esse projeto foi escolhido pelo cliente para ser oficialmente o portal do laboratório, destacando-se entre as propostas apresentadas por outros grupos, e atualmente está em fase de implantação no ambiente de produção do INPE.',
     roles: ['Product Owner', 'Front-End', 'UI/UX Design', 'Documentação'],
     githubUrl: 'https://github.com/404NotFound-ABP/AgriRSLAB_Portal',
-    videoUrl: '/agrislab.mp4', 
+    videoUrl: `${import.meta.env.BASE_URL}agrislab.mp4`, 
   },
 
    {
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     description:'Chatbot desenvolvido para a Fatec Jacareí, com o objetivo de fornecer suporte automatizado a perguntas frequentes sobre a instituição, cursos, eventos e serviços',
     roles: ['Dev', 'Front-End', 'UI/UX Design' ],
     githubUrl: 'https://github.com/404NotFound-ABP/Autoatendimento_Academico',
-    videoUrl: '/faqtecbot.mp4',  
+    videoUrl: `${import.meta.env.BASE_URL}faqtecbot.mp4`,  
   },
 ]
 
@@ -74,7 +74,7 @@ export const education: Education[] = [
     title: 'Linux Unhatched',
     institution: 'Cisco Networking Academy',
     period: '2025',
-    certificateImage: '/certificadoLinux.png',
+    certificateImage: `${import.meta.env.BASE_URL}certificadoLinux.png`,
     description: 'Uma rápida introdução ao popular sistema operacional Linux.'
   },
   
@@ -85,7 +85,7 @@ export const education: Education[] = [
     title: 'Gerenciamento de Ameaças Cibernéticas',
     institution: 'Cisco Networking Academy',
     period: '2025',
-    certificateImage: '/certificadoAmeaças.png',
+    certificateImage: `${import.meta.env.BASE_URL}certificadoAmeaças.png`,
     description: 'Aprenda sobre governança de segurança cibernética e desenvolva suas habilidades para gerenciar ameaças.'
   },
   
@@ -96,7 +96,7 @@ export const education: Education[] = [
     title: 'UX Design',
     institution: 'Alura',
     period: '2025',
-    certificateImage: '/certificadoUx.png',
+    certificateImage: `${import.meta.env.BASE_URL}certificadoUx.png`,
     description: 'Aprenda sobre governança de segurança cibernética e desenvolva suas habilidades para gerenciar ameaças.'
   },
 
@@ -108,7 +108,7 @@ export const education: Education[] = [
     title: 'Adobe Illustrator para Interfaces Digitais',
     institution: 'Alura',
     period: '2025',
-    certificateImage: '/certificadoAdobe.png',
+    certificateImage: `${import.meta.env.BASE_URL}certificadoAdobe.png`,
     description: 'Aprenda sobre governança de segurança cibernética e desenvolva suas habilidades para gerenciar ameaças.'
   },
 

@@ -35,7 +35,7 @@ export default function Hero() {
       {/* FOTO — substitua o placeholder pelo seu <img> */}
       <div className={styles.photo}>
        <div className={styles.photo}>
-        <img src="/Foto.jpg" alt="Eloah Sousa" />
+        <img src={`${import.meta.env.BASE_URL}Foto.jpg`} alt="Eloah Sousa" />
       </div>
       </div>
     </section>
