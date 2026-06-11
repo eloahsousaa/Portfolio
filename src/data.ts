@@ -20,6 +20,7 @@ export const projects: Project[] = [
     description:
       'Portal desenvolvido para o Laboratório de Sensoriamento Remoto Agrícola do INPE, com o objetivo de centralizar informações essenciais, ampliar a visibilidade do laboratório e facilitar o acesso público a pesquisas, projetos e iniciativas. Reúne perfis da equipe, publicações científicas, oportunidades e canais de contato. Esse projeto foi escolhido pelo cliente para ser oficialmente o portal do laboratório, destacando-se entre as propostas apresentadas por outros grupos, e atualmente está em fase de implantação no ambiente de produção do INPE.',
     roles: ['Product Owner', 'Front-End', 'UI/UX Design', 'Documentação'],
+    techs: ['HTML', 'CSS', 'JavaScript'],
     githubUrl: 'https://github.com/404NotFound-ABP/AgriRSLAB_Portal',
     videoUrl: `${import.meta.env.BASE_URL}agrislab.mp4`, 
   },
@@ -28,20 +29,15 @@ export const projects: Project[] = [
     id: 'FaqTec',
     label: 'Projeto Acadêmico · 2026',
     title: 'Chatbot FAQTec — Fatec Jacareí',
-    description:'Chatbot desenvolvido para a Fatec Jacareí, com o objetivo de fornecer suporte automatizado a perguntas frequentes sobre a instituição, cursos, eventos e serviços',
+    description:'Chatbot desenvolvido para a Fatec Jacareí, com o objetivo de fornecer suporte automatizado a perguntas frequentes sobre a instituição, cursos, eventos e serviços. Esse projeto também foi escolhido pelo cliente para ser oficialmente o chatbot da secretaria acadêmica da Fatec Jacareí, destacando-se entre as propostas apresentadas por outros grupos.',
     roles: ['Dev', 'Front-End', 'UI/UX Design' ],
+    techs: ['HTML','React', 'TypeScript', 'Tailwind CSS'],
     githubUrl: 'https://github.com/404NotFound-ABP/Autoatendimento_Academico',
     videoUrl: `${import.meta.env.BASE_URL}faqtecbot.mp4`,  
   },
 ]
 
 export const contactItems: ContactItem[] = [
-  {
-    label: 'E-mail',
-    value: 'eloahsousaa@gmail.com',
-    href: 'mailto:eloahsousaa@gmail.com',
-    icon: 'email',
-  },
   {
     label: 'LinkedIn',
     value: 'Eloah Sousa',

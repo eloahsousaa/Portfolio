@@ -4,6 +4,7 @@ export interface Project {
   title: string
   description: string
   roles: string[]
+  techs: string[]
   githubUrl: string
   liveUrl?: string
   // modal
@@ -20,7 +21,7 @@ export interface ContactItem {
   label: string
   value: string
   href: string
-  icon: 'email' | 'linkedin' | 'github'
+  icon: 'linkedin' | 'github'
 }
 
 export interface Education {

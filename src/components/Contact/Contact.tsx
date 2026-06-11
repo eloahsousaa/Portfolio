@@ -4,9 +4,6 @@ import { contactItems } from '../../data'
 import type { ContactItem } from '../../types'
 import styles from './Contact.module.css'
 
-function EmailIcon() {
-  return <span style={{ fontSize: '1.1rem' }}>✉️</span>
-}
 
 function LinkedInIcon() {
   return (
@@ -24,8 +21,7 @@ function GitHubIcon() {
   )
 }
 
-const iconMap: Record<ContactItem['icon'], React.ReactNode> = {
-  email: <EmailIcon />,
+const iconMap: Partial<Record<ContactItem['icon'], React.ReactNode>> = {
   linkedin: <LinkedInIcon />,
   github: <GitHubIcon />,
 }
@@ -50,11 +46,11 @@ export default function Contact() {
           <a
             key={item.icon}
             href={item.href}
-            target={item.icon !== 'email' ? '_blank' : undefined}
+            target="_blank"
             rel="noopener noreferrer"
             className={styles.item}
           >
-            <div className={styles.icon}>{iconMap[item.icon]}</div>
+           <div className={styles.icon}>{iconMap[item.icon] ?? '✉️'}</div>
             <div>
               <p className={styles.label}>{item.label}</p>
               <p className={styles.value}>{item.value}</p>
